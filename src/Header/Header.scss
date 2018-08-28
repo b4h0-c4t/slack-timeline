@@ -1,0 +1,77 @@
+@mixin HeaderButtons() {
+  width: $grid * 4;
+  height: $grid * 4;
+
+  font-size: $grid * 2;
+}
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: calc(#{$grid} * 2) $grid;
+  width: 50px;
+  height: 100vh;
+
+  background-color: $basecolor;
+
+  &__postButton {
+    @include HeaderButtons();
+
+    border-radius: 50%;
+    background-color: $keycolor;
+    color: #fff;
+  }
+
+  &__searchButton {
+    @include HeaderButtons();
+
+    margin-top: $grid * 2;
+    box-sizing: border-box;
+    border: solid 1px $keycolor;
+    border-radius: 50%;
+    background-color: transparent;
+    color: $keycolor;
+  }
+
+  &__channelLists {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-top: $grid * 2;
+
+    max-height: 70vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &__list {
+
+      &:not(:first-child) {
+        margin-top: $grid * 2;
+      }
+
+      &__button {
+        @include HeaderButtons();
+
+        background-color: transparent;
+        color: #fff;
+      }
+    }
+  }
+
+  &__addChannelButton {
+    @include HeaderButtons();
+
+    border-top: dashed 1px #fff;
+
+    background-color: transparent;
+    color: #fff;
+  }
+}

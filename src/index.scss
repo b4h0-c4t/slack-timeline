@@ -1,7 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
+@import "./reset.scss";
+@import "./const.scss";
 @import "./App.scss";
+@import "./Header/Header.scss";
